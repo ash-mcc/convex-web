@@ -17,7 +17,7 @@
            
            :prod
            {:check-asserts? true
-            :instrument? false}}
+            :instrument? true}}
  
  
  ;; -- SITE
@@ -30,7 +30,7 @@
   :asset-prefix-url
   #profile {:dev ""
             :test ""
-            :prod "https://storage.googleapis.com/convex-world-site"}
+            :prod ""}
   
   :security
   #profile {:dev {:anti-forgery true}
@@ -76,7 +76,7 @@
                   :etch-store-temp? true
                   :etch-store-temp-prefix "convex-world-test"}
            
-           :prod {:hostname "convex.world"
+           :prod {:hostname "localhost"
                   :key-store #join [#system/property "user.home" "/.convex/convex-world.pfx"]
                   :key-store-passphrase #ref [:secrets :key-store-passphrase]
                   :key-passphrase #ref [:secrets :key-passphrase]
